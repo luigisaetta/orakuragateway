@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0"
+	localization="en_us">
+	<OCD id="org.eclipse.kura.example.IoTGateway.IoTGateway"
+		name="IoTGateway"
+		description="This is the configuration for the IoTGateway Kura bundle">
+		
+		<AD id="mode.test" name="mode.test" type="String"
+			cardinality="0" required="true" default="YES"
+			description="Test mode">
+			<Option label="YES" value="YES" />
+			<Option label="NO" value="NO" />
+		</AD>	
+		
+		<AD id="ta.pathname" name="ta.pathname" type="String"
+			cardinality="0" required="true" default="/home/pi/orakuraconfig/rpikura3"
+			description="Trusted assett store pathName" />
+
+		<AD id="ta.pwd" name="ta.pwd" type="Password" cardinality="0"
+			required="true" default="Amsterdam1"
+			description="Trusted assett store password" />
+
+		<AD id="msg.topic" name="msg.topic" type="String" cardinality="0"
+			required="true" default="device/AIRCARE/MSG"
+			description="the TOPIC we're subscribing" />
+
+		<AD id="msg.type" name="msg.type" type="String" cardinality="0"
+			required="true" default="AIRCARE" description="the Message Type">
+			<Option label="OBD2" value="OBD2" />
+			<Option label="TEMP" value="TEMP" />
+			<Option label="BLE" value="BLE" />
+			<Option label="EDISON" value="EDISON" />
+			<Option label="SMART_LIGHT" value="SMART_LIGHT" />
+			<Option label="AIRCARE" value="AIRCARE" />
+		</AD>
+
+	</OCD>
+
+	<Designate
+		pid="org.eclipse.kura.example.IoTGateway.IoTGateway">
+		<Object
+			ocdref="org.eclipse.kura.example.IoTGateway.IoTGateway" />
+	</Designate>
+</MetaData>
